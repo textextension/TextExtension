@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "3D Clipboard",
+  "version": "1.0.0",
+  "description": "A 3D Clipboard extension with drag and drop, pinning, and favorites.",
+  "permissions": [
+    "sidePanel",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open 3D Clipboard"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.js"]
+    }
+  ],
+  "icons": {
+     "16": "vite.svg",
+     "48": "vite.svg",
+     "128": "vite.svg"
+  }
+}
