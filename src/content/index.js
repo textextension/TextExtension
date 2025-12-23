@@ -1,0 +1,1 @@
+document.addEventListener("copy",()=>{const e=document.getSelection()?.toString();e&&e.trim().length>0&&chrome.runtime.sendMessage({type:"SAVE_CLIPBOARD",payload:{text:e,timestamp:Date.now(),source:window.location.href}})});console.log("3D Clipboard Content Script Loaded");
